@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  airbnbex:
+    build:
+      context: .
+      target: build
+    restart: unless-stopped
+    container_name: airbnbex
+    command: mix phx.server
+    depends_on:
+      - airbnbex_db
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/app
+    networks:
+      - airbnbex_net
+
+  airbnbex_db:
+    image: "postgres:13"
+    container_name: airbnbex_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - "airbnbex_db:/var/lib/postgresql/data"
+    networks:
+      - airbnbex_net
+
+volumes:
+  airbnbex_db:
+
+networks:
+  airbnbex_net:
+    name: airbnbex_net
