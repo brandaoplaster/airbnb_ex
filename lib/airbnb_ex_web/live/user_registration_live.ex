@@ -4,6 +4,14 @@ defmodule AirbnbExWeb.UserRegistrationLive do
   alias AirbnbEx.Accounts
   alias AirbnbEx.Accounts.User
 
+  import AirbnbExWeb.{
+    Header,
+    SimpleForm,
+    Button,
+    Input,
+    Notify
+  }
+
   def render(assigns) do
     ~H"""
     <div class="mx-auto max-w-sm">
@@ -27,9 +35,9 @@ defmodule AirbnbExWeb.UserRegistrationLive do
         action={~p"/users/log_in?_action=registered"}
         method="post"
       >
-        <.error :if={@check_errors}>
+        <.notify :if={@check_errors}>
           Oops, something went wrong! Please check the errors below.
-        </.error>
+        </.notify>
 
         <.input field={@form[:email]} type="email" label="Email" required />
         <.input field={@form[:password]} type="password" label="Password" required />

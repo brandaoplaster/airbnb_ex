@@ -3,6 +3,14 @@ defmodule AirbnbExWeb.UserResetPasswordLive do
 
   alias AirbnbEx.Accounts
 
+  import AirbnbExWeb.{
+    Header,
+    SimpleForm,
+    Button,
+    Input,
+    Notify
+  }
+
   def render(assigns) do
     ~H"""
     <div class="mx-auto max-w-sm">
@@ -14,9 +22,9 @@ defmodule AirbnbExWeb.UserResetPasswordLive do
         phx-submit="reset_password"
         phx-change="validate"
       >
-        <.error :if={@form.errors != []}>
+        <.notify :if={@form.errors != []}>
           Oops, something went wrong! Please check the errors below.
-        </.error>
+        </.notify>
 
         <.input field={@form[:password]} type="password" label="New password" required />
         <.input

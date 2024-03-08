@@ -3,6 +3,13 @@ defmodule AirbnbExWeb.UserSettingsLive do
 
   alias AirbnbEx.Accounts
 
+  import AirbnbExWeb.{
+    Header,
+    SimpleForm,
+    Button,
+    Input
+  }
+
   def render(assigns) do
     ~H"""
     <.header class="text-center">

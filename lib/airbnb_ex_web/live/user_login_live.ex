@@ -1,6 +1,13 @@
 defmodule AirbnbExWeb.UserLoginLive do
   use AirbnbExWeb, :live_view
 
+  import AirbnbExWeb.{
+    Header,
+    SimpleForm,
+    Button,
+    Input
+  }
+
   def render(assigns) do
     ~H"""
     <div class="mx-auto max-w-sm">
