@@ -3,13 +3,6 @@ defmodule AirbnbExWeb.UserConfirmationLive do
 
   alias AirbnbEx.Accounts
 
-  import AirbnbExWeb.{
-    Header,
-    SimpleForm,
-    Button,
-    Input
-  }
-
   def render(%{live_action: :edit} = assigns) do
     ~H"""
     <div class="mx-auto max-w-sm">

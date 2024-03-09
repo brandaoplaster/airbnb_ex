@@ -3,13 +3,6 @@ defmodule AirbnbExWeb.UserForgotPasswordLive do
 
   alias AirbnbEx.Accounts
 
-  import AirbnbExWeb.{
-    Header,
-    SimpleForm,
-    Button,
-    Input
-  }
-
   def render(assigns) do
     ~H"""
     <div class="mx-auto max-w-sm">

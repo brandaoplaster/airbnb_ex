@@ -4,14 +4,6 @@ defmodule AirbnbExWeb.UserRegistrationLive do
   alias AirbnbEx.Accounts
   alias AirbnbEx.Accounts.User
 
-  import AirbnbExWeb.{
-    Header,
-    SimpleForm,
-    Button,
-    Input,
-    Notify
-  }
-
   def render(assigns) do
     ~H"""
     <div class="mx-auto max-w-sm">
