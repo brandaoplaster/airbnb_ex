@@ -1,4 +1,4 @@
-defmodule AirbnbExWeb.Header do
+defmodule Components.Header do
   use Phoenix.Component
 
   @doc """

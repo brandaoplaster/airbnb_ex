@@ -1,4 +1,4 @@
-defmodule AirbnbExWeb.SimpleForm do
+defmodule Components.SimpleForm do
   use Phoenix.Component
 
   @doc """

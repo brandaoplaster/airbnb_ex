@@ -1,4 +1,4 @@
-defmodule AirbnbExWeb.List do
+defmodule Components.List do
   use Phoenix.Component
 
   @doc """

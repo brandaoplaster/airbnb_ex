@@ -1,4 +1,4 @@
-defmodule AirbnbExWeb.Label do
+defmodule Components.Label do
   use Phoenix.Component
 
   @doc """

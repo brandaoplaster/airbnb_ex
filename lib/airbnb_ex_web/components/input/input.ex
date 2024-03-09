@@ -1,8 +1,8 @@
-defmodule AirbnbExWeb.Input do
+defmodule Components.Input do
   use Phoenix.Component
 
-  import AirbnbExWeb.Label
-  import AirbnbExWeb.Notify
+  import Components.Label
+  import Components.Notify
 
   @doc """
   Renders an input with label and error messages.

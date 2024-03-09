@@ -1,4 +1,4 @@
-defmodule AirbnbExWeb.Notify do
+defmodule Components.Notify do
   use Phoenix.Component
 
   @doc """

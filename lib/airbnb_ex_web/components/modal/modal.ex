@@ -1,10 +1,10 @@
-defmodule AirbnbExWeb.Modal do
+defmodule Components.Modal do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
   import AirbnbExWeb.Gettext
 
-  import AirbnbExWeb.Icon
+  import Components.Icon
 
   @doc """
   Renders a modal.

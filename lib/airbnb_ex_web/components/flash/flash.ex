@@ -1,10 +1,10 @@
-defmodule AirbnbExWeb.Flash do
+defmodule Components.Flash do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
   import AirbnbExWeb.Gettext
 
-  import AirbnbExWeb.Icon
+  import Components.Icon
 
   @doc """
   Renders flash notices.

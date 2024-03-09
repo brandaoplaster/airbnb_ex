@@ -1,4 +1,4 @@
-defmodule AirbnbExWeb.Table do
+defmodule Components.Table do
   use Phoenix.Component
 
   import AirbnbExWeb.Gettext
