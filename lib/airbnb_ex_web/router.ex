@@ -17,11 +17,11 @@ defmodule AirbnbExWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", AirbnbExWeb do
-    pipe_through :browser
+  # scope "/", AirbnbExWeb do
+  #   pipe_through :browser
 
-    get "/", PageController, :home
-  end
+  #   get "/", PageController, :home
+  # end
 
   # Other scopes may use custom stacks.
   # scope "/api", AirbnbExWeb do
@@ -73,7 +73,7 @@ defmodule AirbnbExWeb.Router do
 
   scope "/", AirbnbExWeb do
     pipe_through [:browser]
-
+    live "/", Storefront.StorefrontLive, :index
     delete "/users/log_out", UserSessionController, :delete
 
     live_session :current_user,

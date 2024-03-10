@@ -84,7 +84,7 @@ defmodule AirbnbExWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import AirbnbExWeb.CoreComponents
+      use CoreComponents
       import AirbnbExWeb.Gettext
 
       # Shortcut for generating JS commands
