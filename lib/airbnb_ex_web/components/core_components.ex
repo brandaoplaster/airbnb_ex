@@ -1,7 +1,7 @@
-defmodule AirbnbExWeb.CoreComponents do
+defmodule CoreComponents do
   defmacro __using__(_) do
     quote do
-      import AirbnbExWeb.Components.{
+      import Components.{
         Button,
         Notify,
         Flash,
@@ -11,7 +11,9 @@ defmodule AirbnbExWeb.CoreComponents do
         List,
         Modal,
         SimpleForm,
-        Table
+        Table,
+        ContainerMain,
+        Card
       }
     end
   end
