@@ -5,7 +5,7 @@ defmodule AirbnbExWeb.Storefront.StorefrontLive do
     ~H"""
     <div>
       <.container_main class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 justify-center items-center">
-        <%= Enum.map(1..12, fn _ -> %>
+        <%= Enum.map(1..18, fn _ -> %>
           <.card class="max-w-xs mx-4 mb-2 rounded-md h-96">
             <.card_media src="https://v1.tailwindcss.com/img/card-top.jpg" class="h-52 rounded-lg" />
             <.card_body class="p-1">
