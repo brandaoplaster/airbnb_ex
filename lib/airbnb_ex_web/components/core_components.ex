@@ -6,14 +6,16 @@ defmodule CoreComponents do
         Notify,
         Flash,
         Header,
-        Icon,
         Input,
         List,
         Modal,
         SimpleForm,
         Table,
         ContainerMain,
-        Card
+        Card,
+        Navbar,
+        Avatar,
+        Icon
       }
     end
   end
