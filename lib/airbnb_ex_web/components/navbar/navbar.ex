@@ -1,7 +1,7 @@
 defmodule Components.Navbar do
   use Phoenix.Component
 
-  import Components.Avatar
+  import Components.{Avatar, Dropdown, Icon}
 
   def navbar(assigns) do
     ~H"""
@@ -98,29 +98,31 @@ defmodule Components.Navbar do
 
           <div class="block">
             <div class="inline relative">
-              <button
-                type="button"
-                class="inline-flex items-center relative px-2 border rounded-full hover:shadow-lg"
-              >
-                <div class="pl-1">
-                  <svg
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                    role="presentation"
-                    focusable="false"
-                    style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"
-                  >
-                    <g fill="none" fill-rule="nonzero">
-                      <path d="m2 16h28"></path>
-                      <path d="m2 24h28"></path>
-                      <path d="m2 8h28"></path>
-                    </g>
-                  </svg>
-                </div>
-
+              <div class="inline-flex items-center relative px-2 border rounded-full hover:shadow-lg">
+                <.dropdown>
+                  <.dropdown_menu
+                    class="text-gray-800 block px-4 py-2 text-sm hover:bg-gray-200"
+                    to="/"
+                    label="Trips"
+                  />
+                  <.dropdown_menu
+                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-200"
+                    to="/"
+                    label="Wishlists"
+                  />
+                  <.dropdown_menu
+                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-200"
+                    to="/"
+                    label="Profile"
+                  />
+                  <.dropdown_menu
+                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-200"
+                    to="/"
+                    label="Log out"
+                  />
+                </.dropdown>
                 <.avatar class="block flex-grow-0 flex-shrink-0 h-10 w-12 pl-5" />
-              </button>
+              </div>
             </div>
           </div>
         </div>
