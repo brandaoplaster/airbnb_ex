@@ -15,7 +15,8 @@ defmodule CoreComponents do
         Card,
         Navbar,
         Avatar,
-        Icon
+        Icon,
+        Dropdown
       }
     end
   end
