@@ -1,7 +1,7 @@
 defmodule Components.Navbar do
   use Phoenix.Component
 
-  import Components.{Avatar, Dropdown, Icon}
+  import Components.{Avatar, Dropdown}
 
   def navbar(assigns) do
     ~H"""
