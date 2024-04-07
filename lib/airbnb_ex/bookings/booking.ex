@@ -6,18 +6,20 @@ defmodule AirbnbEx.Bookings.Booking do
   alias AirbnbEx.Accounts.User
 
   @primary_key {:id, :binary_id, autogenerate: true}
-  @required_params ~w(check_in check_out amount quantity_days status)a
-  @status_values [:active, :inactive, :pending]
+  @required_params ~w(property_id guest_id check_in check_out amount quantity_days status)a
+  @status_values ["active", "cancelled"]
 
   schema "bookings" do
     field :check_in, :date
     field :check_out, :date
     field :amount, :decimal
     field :quantity_days, :integer
-    field :status, Ecto.Enum, values: @status_values
+    field :status, :string
 
-    belongs_to :property, Property
-    belongs_to :guest, User
+    belongs_to :property, Property, type: :binary_id
+    belongs_to :guest, User, type: :binary_id
+
+    timestamps()
   end
 
   def changeset(struct \\ %__MODULE__{}, params) do
@@ -26,10 +28,12 @@ defmodule AirbnbEx.Bookings.Booking do
     |> validate_required(@required_params)
     |> validate_number(:quantity_days, greater_than: 0)
     |> validate_number(:amount, greater_than: 0)
-    |> validate_inclusion(:status, in: @status_values)
+    |> validate_inclusion(:status, @status_values)
     |> validate_past_date(:check_in)
     |> validate_past_date(:check_out)
     |> validate_date_grater_than(:check_in, :check_out)
+    |> assoc_constraint(:property)
+    |> assoc_constraint(:guest)
   end
 
   defp validate_past_date(changeset, field) do
