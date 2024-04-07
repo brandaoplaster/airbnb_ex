@@ -2,6 +2,9 @@ defmodule AirbnbEx.Bookings.Booking do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias AirbnbEx.Accommodations.Property
+  alias AirbnbEx.Accounts.User
+
   @primary_key {:id, :binary_id, autogenerate: true}
   @required_params ~w(check_in check_out amount quantity_days status)a
   @status_values [:active, :inactive, :pending]
@@ -12,6 +15,9 @@ defmodule AirbnbEx.Bookings.Booking do
     field :amount, :decimal
     field :quantity_days, :integer
     field :status, Ecto.Enum, values: @status_values
+
+    belongs_to :property, Property
+    belongs_to :guest, User
   end
 
   def changeset(struct \\ %__MODULE__{}, params) do
