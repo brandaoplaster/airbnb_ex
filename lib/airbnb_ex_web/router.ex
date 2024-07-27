@@ -74,6 +74,7 @@ defmodule AirbnbExWeb.Router do
   scope "/", AirbnbExWeb do
     pipe_through [:browser]
     live "/", Storefront.StorefrontLive, :index
+    live "/rooms", Rooms.RoomsLive, :index
     delete "/users/log_out", UserSessionController, :delete
 
     live_session :current_user,

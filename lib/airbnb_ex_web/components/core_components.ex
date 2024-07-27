@@ -2,21 +2,23 @@ defmodule CoreComponents do
   defmacro __using__(_) do
     quote do
       import Components.{
+        Avatar,
+        Banner,
         Button,
-        Notify,
+        Card,
+        ContainerMain,
+        Dropdown,
         Flash,
         Header,
+        Icon,
         Input,
         List,
         Modal,
-        SimpleForm,
-        Table,
-        ContainerMain,
-        Card,
         Navbar,
-        Avatar,
-        Icon,
-        Dropdown
+        Notify,
+        Section,
+        SimpleForm,
+        Table
       }
     end
   end
