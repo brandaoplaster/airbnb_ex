@@ -2,6 +2,7 @@ defmodule CoreComponents do
   defmacro __using__(_) do
     quote do
       import Components.{
+        DatePicker,
         Avatar,
         Banner,
         Button,
