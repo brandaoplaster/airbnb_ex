@@ -6,7 +6,7 @@ defmodule Components.Section do
 
   slot :inner_block, required: true
 
-  def banner(assigns) do
+  def section(assigns) do
     ~H"""
     <section class={[@class]}>
       <%= render_slot(@inner_block) %>
